@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201608251137489_AddTweet.Designer.cs">
       <DependentUpon>201608251137489_AddTweet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609091303506_AddImage.cs" />
+    <Compile Include="Migrations\201609091303506_AddImage.Designer.cs">
+      <DependentUpon>201609091303506_AddImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608251137489_AddTweet.resx">
       <DependentUpon>201608251137489_AddTweet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609091303506_AddImage.resx">
+      <DependentUpon>201609091303506_AddImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
