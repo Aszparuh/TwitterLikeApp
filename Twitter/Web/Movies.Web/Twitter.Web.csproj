@@ -322,6 +322,10 @@
       <Project>{187e8997-fef3-40e0-9e9b-d4651c45952e}</Project>
       <Name>Twitter.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Services\Twitter.Services.Infrastructure\Twitter.Services.Infrastructure.csproj">
+      <Project>{8f4eff64-3ace-409d-863f-8262d6fff299}</Project>
+      <Name>Twitter.Services.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Twitter.Web.Infrastructure\Twitter.Web.Infrastructure.csproj">
       <Project>{10F8C8D6-4C46-4F1F-951B-341E0AC66747}</Project>
       <Name>Twitter.Web.Infrastructure</Name>

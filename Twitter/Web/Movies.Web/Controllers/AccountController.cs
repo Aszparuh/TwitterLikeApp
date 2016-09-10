@@ -8,6 +8,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
+    using Twitter.Services.Infrastructure.Contracts;
     using Twitter.Web.ViewModels.Account;
 
     [Authorize]
@@ -15,17 +16,21 @@
     {
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
+        private const string PathToIintitalAvatar = @"~/avatar.png";
         private ApplicationSignInManager signInManager;
         private ApplicationUserManager userManager;
+        private IInitialAvatarService initialAvatarService;
 
-        public AccountController()
+        public AccountController(IInitialAvatarService initialAvatarService)
         {
+            this.initialAvatarService = initialAvatarService;
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, IInitialAvatarService initialAvatarService)
         {
             this.UserManager = userManager;
             this.SignInManager = signInManager;
+            this.initialAvatarService = initialAvatarService;
         }
 
         public ApplicationSignInManager SignInManager
@@ -156,7 +161,16 @@
         {
             if (this.ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+                //if (System.IO.File.Exists(PathToIintitalAvatar))
+                //{
+                    
+                //}
+
+                var image = this.initialAvatarService.GetDefaultAvatarImage(PathToIintitalAvatar);
+                var imageContent = this.initialAvatarService.GetByteArrayFromImage(image);
+                var avatar = new Image() { FileName = "avatar", ContentType = "image/png", Content = imageContent };
+
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Avatar = avatar };
                 var result = await this.UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
