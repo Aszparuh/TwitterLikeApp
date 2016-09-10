@@ -1,5 +1,6 @@
 ﻿namespace Twitter.Web.Controllers
 {
+    using System;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Web;
@@ -16,7 +17,6 @@
     {
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
-        private const string PathToIintitalAvatar = @"~/avatar.png";
         private ApplicationSignInManager signInManager;
         private ApplicationUserManager userManager;
         private IInitialAvatarService initialAvatarService;
@@ -161,14 +161,10 @@
         {
             if (this.ModelState.IsValid)
             {
-                //if (System.IO.File.Exists(PathToIintitalAvatar))
-                //{
-                    
-                //}
-
-                var image = this.initialAvatarService.GetDefaultAvatarImage(PathToIintitalAvatar);
+                var path = this.Server.MapPath(@"~/App_Data/Resources/avatar.png");
+                var image = this.initialAvatarService.GetDefaultAvatarImage(path);
                 var imageContent = this.initialAvatarService.GetByteArrayFromImage(image);
-                var avatar = new Image() { FileName = "avatar", ContentType = "image/png", Content = imageContent };
+                var avatar = new Image() { FileName = "avatar", ContentType = "image/png", Content = imageContent, CreatedOn = DateTime.Now };
 
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Avatar = avatar };
                 var result = await this.UserManager.CreateAsync(user, model.Password);

@@ -4,7 +4,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using Common.Models;
 
-    public class Image : BaseModel<string>
+    public class Image : BaseModel<string>, IAuditInfo, IDeletableEntity
     {
         [StringLength(255)]
         public string FileName { get; set; }

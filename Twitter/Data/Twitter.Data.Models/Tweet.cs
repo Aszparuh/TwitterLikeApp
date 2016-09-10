@@ -3,7 +3,7 @@
     using System.ComponentModel.DataAnnotations;
     using Common.Models;
 
-    public class Tweet : BaseModel<int>
+    public class Tweet : BaseModel<int>, IAuditInfo, IDeletableEntity
     {
         [Required]
         [MaxLength(300)]
