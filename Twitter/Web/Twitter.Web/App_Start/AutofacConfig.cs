@@ -7,6 +7,7 @@
     using Autofac.Integration.Mvc;
     using Data;
     using Data.Common;
+    using Services.Data.Contracts;
     using Services.Infrastructure.Contracts;
 
     public class AutofacConfig
@@ -45,12 +46,15 @@
                 .As<DbContext>()
                 .InstancePerRequest();
 
-            builder.RegisterGeneric(typeof(DbRepository<>))
-                .As(typeof(IDbRepository<>))
+            builder.RegisterGeneric(typeof(DbRepository<,>))
+                .As(typeof(IDbRepository<,>))
                 .InstancePerRequest();
 
             var servicesAssembly = Assembly.GetAssembly(typeof(IInitialAvatarService));
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+
+            var secondServicesAssembly = Assembly.GetAssembly(typeof(IAvatarService));
+            builder.RegisterAssemblyTypes(secondServicesAssembly).AsImplementedInterfaces();
         }
     }
 }

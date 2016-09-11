@@ -203,6 +203,7 @@
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AvatarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -300,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Avatar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -325,6 +327,10 @@
     <ProjectReference Include="..\..\Services\Twitter.Services.Infrastructure\Twitter.Services.Infrastructure.csproj">
       <Project>{8f4eff64-3ace-409d-863f-8262d6fff299}</Project>
       <Name>Twitter.Services.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Twitter.Services.Data\Twitter.Services.Data.csproj">
+      <Project>{DB4D117C-BD83-414F-8479-A570762510B6}</Project>
+      <Name>Twitter.Services.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Twitter.Web.Infrastructure\Twitter.Web.Infrastructure.csproj">
       <Project>{10F8C8D6-4C46-4F1F-951B-341E0AC66747}</Project>

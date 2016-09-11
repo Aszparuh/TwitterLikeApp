@@ -6,8 +6,9 @@
 
     using Models;
 
-    public class DbRepository<T> : IDbRepository<T>
-        where T : BaseModel<int>
+    public class DbRepository<T, TKey> : IDbRepository<T, TKey>
+        where T : BaseModel<TKey>
+        where TKey : class
     {
         public DbRepository(DbContext context)
         {
@@ -34,7 +35,7 @@
             return this.DbSet;
         }
 
-        public T GetById(int id)
+        public T GetById(TKey id)
         {
             return this.All().FirstOrDefault(x => x.Id == id);
         }
