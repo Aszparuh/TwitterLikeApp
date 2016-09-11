@@ -1,20 +1,21 @@
 ﻿namespace Twitter.Services.Data
 {
-    using System;
     using Twitter.Data.Common;
     using Twitter.Data.Models;
     using Twitter.Services.Data.Contracts;
 
     public class AvatarService : IAvatarService
     {
-        public AvatarService(IDbRepository<Image> avatars)
-        {
+        private readonly IDbRepository<Image, string> avatars;
 
+        public AvatarService(IDbRepository<Image, string> avatars)
+        {
+            this.avatars = avatars;
         }
 
         public Image GetById(string id)
         {
-            throw new NotImplementedException();
+            return this.avatars.GetById(id);
         }
     }
 }

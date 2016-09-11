@@ -51,7 +51,6 @@
 
             var servicesAssembly = Assembly.GetAssembly(typeof(IInitialAvatarService));
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
-
         }
     }
 }
