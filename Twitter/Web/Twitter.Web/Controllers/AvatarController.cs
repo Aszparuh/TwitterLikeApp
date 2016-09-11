@@ -1,10 +1,10 @@
 ﻿namespace Twitter.Web.Controllers
 {
-    using System.Web.Mvc;
-    using Services.Data.Contracts;
     using System;
     using System.Globalization;
     using System.Web;
+    using System.Web.Mvc;
+    using Services.Data.Contracts;
     using Twitter.Data.Models;
 
     public class AvatarController : Controller
