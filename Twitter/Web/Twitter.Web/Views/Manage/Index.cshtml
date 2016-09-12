@@ -84,4 +84,14 @@
                 }*@
         </dd>
     </dl>
+    @Ajax.ActionLink("Change Avatar", "_Upload", "Avatar", null,
+        new AjaxOptions
+        {
+            HttpMethod = "GET",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "ajax-container"
+        }, new { @class = "btn btn-default" })
+    <div id="ajax-container">
+
+    </div>
 </div>
