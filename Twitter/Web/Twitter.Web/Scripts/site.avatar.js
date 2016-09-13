@@ -22,7 +22,7 @@ $(function () {
         $('#avatar-upload-form input:file').on("change", function (e) {
             var files = e.currentTarget.files;
             for (var x in files) {
-                if (files[x].name != "item" && typeof files[x].name != "undefined") {
+                if (files[x].name !== "item" && typeof files[x].name !== "undefined") {
                     if (files[x].size <= maxSizeInBytes) {
                         // Submit the selected file
                         $('#avatar-upload-form .upload-file-notice').removeClass('bg-danger');
@@ -147,7 +147,7 @@ function saveAvatar() {
                 $('#avatar-crop-box').addClass('hidden');
             }
         } else {
-            alert(data.errorMessage)
+            alert(data.errorMessage);
         }
     }).fail(function (e) {
         alert('Cannot upload avatar at this time');
