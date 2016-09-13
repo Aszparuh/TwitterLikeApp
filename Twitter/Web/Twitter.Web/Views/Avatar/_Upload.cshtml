@@ -7,7 +7,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <section id="avatar-upload-box">
-            @using (Ajax.BeginForm("_Upload", "Avatar",
+            @using (Ajax.BeginForm("Upload", "Avatar",
                 new AjaxOptions() { HttpMethod = "POST" },
                 new { enctype = "multipart/form-data", id = "avatar-upload-form" }))
             {

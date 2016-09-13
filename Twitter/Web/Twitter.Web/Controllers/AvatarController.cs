@@ -43,17 +43,11 @@
         [HttpGet]
         public ActionResult Upload()
         {
-            return this.View();
-        }
-
-        [HttpGet]
-        public ActionResult _Upload()
-        {
-            return this.PartialView();
+            return this.PartialView("_Upload");
         }
 
         [ValidateAntiForgeryToken]
-        public ActionResult _Upload(IEnumerable<HttpPostedFileBase> files)
+        public ActionResult Upload(IEnumerable<HttpPostedFileBase> files)
         {
             if (files == null || !files.Any())
             {
