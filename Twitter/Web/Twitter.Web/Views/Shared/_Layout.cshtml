@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/nprogress")
 
 </head>
 <body>
@@ -39,6 +39,17 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/nprogress")
     @RenderSection("scripts", required: false)
+    <script>
+        //$(document).on('click', '.ajax-action', function (e) {
+        //    NProgress.start();
+        //});
+        //$(document).on('change', '.ajax-container', function () {
+        //    NProgress.end();
+        //    alert();
+        //})
+    </script>
 </body>
 </html>
