@@ -43,6 +43,7 @@
         public void Add(T entity)
         {
             this.DbSet.Add(entity);
+            this.Save();
         }
 
         public void Delete(T entity)

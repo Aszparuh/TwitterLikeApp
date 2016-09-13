@@ -1,5 +1,6 @@
 ﻿namespace Twitter.Services.Data
 {
+    using System;
     using Twitter.Data.Common;
     using Twitter.Data.Models;
     using Twitter.Services.Data.Contracts;
@@ -16,6 +17,11 @@
         public Image GetById(string id)
         {
             return this.avatars.GetById(id);
+        }
+
+        public void Save()
+        {
+            this.avatars.Save();
         }
     }
 }

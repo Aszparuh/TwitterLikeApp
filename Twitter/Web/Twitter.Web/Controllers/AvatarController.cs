@@ -8,6 +8,7 @@
     using System.Web;
     using System.Web.Helpers;
     using System.Web.Mvc;
+    using Microsoft.AspNet.Identity;
     using Services.Data.Contracts;
     using Twitter.Data.Models;
 
@@ -94,6 +95,13 @@
                 System.IO.File.Delete(fn);
 
                 // ... and save the new one.
+                var userId = this.HttpContext.User.Identity.GetUserId();
+                var imageFromDatabase = this.avatars.GetById(userId);
+                imageFromDatabase.FileName = img.FileName;
+                imageFromDatabase.ContentType = "image/" + img.ImageFormat.ToLower();
+                imageFromDatabase.Content = img.GetBytes();
+                this.avatars.Save();
+
                 var newFileName = Path.Combine(AvatarPath, Path.GetFileName(fn));
                 var newFileLocation = this.HttpContext.Server.MapPath(newFileName);
                 if (Directory.Exists(Path.GetDirectoryName(newFileLocation)) == false)

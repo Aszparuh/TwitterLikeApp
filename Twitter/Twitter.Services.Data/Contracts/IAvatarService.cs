@@ -5,5 +5,7 @@
     public interface IAvatarService
     {
         Image GetById(string id);
+
+        void Save();
     }
 }
