@@ -1,6 +1,5 @@
 ﻿namespace Twitter.Services.Data
 {
-    using System;
     using Twitter.Data.Common;
     using Twitter.Data.Models;
     using Twitter.Services.Data.Contracts;
