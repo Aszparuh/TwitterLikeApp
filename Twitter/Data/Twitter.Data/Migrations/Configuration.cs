@@ -64,6 +64,25 @@
                     userManager.AddToRole(newUser.Id, "Admin");
                 }
             }
+
+            if (!context.Tweets.Any())
+            {
+                var admin = context.Users.FirstOrDefault(u => u.UserName == "admin@admin.bg");
+
+                var tweets = new Tweet[]
+                {
+                    new Tweet { Content = "Initial Tweet by Admin " + DateTime.Now.ToString() },
+                    new Tweet { Content = "Second Tweet" },
+                    new Tweet { Content = "Third Tweet" }
+                };
+
+                foreach (var tweet in tweets)
+                {
+                    admin.Tweets.Add(tweet);
+                }
+
+                context.SaveChanges();
+            }
         }
 
         private string MapPath(string seedFile)

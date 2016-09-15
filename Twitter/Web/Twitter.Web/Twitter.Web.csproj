@@ -324,8 +324,19 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Data\Twitter.Common\Twitter.Data.Common.csproj">
-      <Project>{EE64578D-5EC9-4430-AB4D-2F578D41BD54}</Project>
+      <Project>{ee64578d-5ec9-4430-ab4d-2f578d41bd54}</Project>
       <Name>Twitter.Data.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Data\Twitter.Data.Models\Twitter.Data.Models.csproj">
@@ -337,7 +348,7 @@
       <Name>Twitter.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Twitter.Services.Data\Twitter.Services.Data.csproj">
-      <Project>{DB4D117C-BD83-414F-8479-A570762510B6}</Project>
+      <Project>{db4d117c-bd83-414f-8479-a570762510b6}</Project>
       <Name>Twitter.Services.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\Twitter.Services.Infrastructure\Twitter.Services.Infrastructure.csproj">
@@ -345,20 +356,9 @@
       <Name>Twitter.Services.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Twitter.Web.Infrastructure\Twitter.Web.Infrastructure.csproj">
-      <Project>{10F8C8D6-4C46-4F1F-951B-341E0AC66747}</Project>
+      <Project>{10f8c8d6-4c46-4f1f-951b-341e0ac66747}</Project>
       <Name>Twitter.Web.Infrastructure</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\jquery-3.1.0.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
-    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
