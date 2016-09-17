@@ -21,7 +21,7 @@
         public ActionResult Index()
         {
             var homePageTweets = this.tweets.GetAllNew().To<TweetViewModel>();
-            return this.View();
+            return this.View(homePageTweets);
         }
 
         public ActionResult About()

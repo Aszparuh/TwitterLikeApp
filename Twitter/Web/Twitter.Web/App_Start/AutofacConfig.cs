@@ -50,6 +50,10 @@
                 .As(typeof(IDbRepository<,>))
                 .InstancePerRequest();
 
+            builder.RegisterGeneric(typeof(DbRepository<>))
+                .As(typeof(IDbRepository<>))
+                .InstancePerRequest();
+
             var servicesAssembly = Assembly.GetAssembly(typeof(IInitialAvatarService));
             builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
 

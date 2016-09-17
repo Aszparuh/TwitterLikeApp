@@ -1,0 +1,16 @@
+﻿@using Twitter.Web.ViewModels.Home
+
+@model TweetViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <img id="small-avatar" src="~/Avatar?id=@Model.ApplicationUserId" />
+        </div>
+        <div class="col-md-10">
+            <p>
+                @Model.Content
+            </p>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,11 @@
 ﻿namespace Twitter.Services.Data
 {
     using System.Linq;
+    using Contracts;
     using Twitter.Data.Common;
     using Twitter.Data.Models;
 
-    public class TweetService
+    public class TweetService : ITweetService
     {
         private readonly IDbRepository<Tweet> tweets;
 
