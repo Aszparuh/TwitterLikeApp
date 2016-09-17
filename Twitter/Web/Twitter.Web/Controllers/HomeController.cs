@@ -5,11 +5,22 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
+    using Infrastructure.Mappings;
+    using Services.Data.Contracts;
+    using ViewModels.Home;
 
     public class HomeController : Controller
     {
+        private readonly ITweetService tweets;
+
+        public HomeController(ITweetService tweets)
+        {
+            this.tweets = tweets;
+        }
+
         public ActionResult Index()
         {
+            var homePageTweets = this.tweets.GetAllNew().To<TweetViewModel>();
             return this.View();
         }
 
