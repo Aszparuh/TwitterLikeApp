@@ -2,15 +2,13 @@
 
 @model TweetViewModel
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-2">
-            <img id="small-avatar" src="~/Avatar?id=@Model.ApplicationUserId" />
-        </div>
-        <div class="col-md-10">
-            <p>
-                @Model.Content
-            </p>
-        </div>
+<div class="row">
+    <div class="col-sm-12">
+        <img class="large-avatar" src="~/Avatar?id=@Model.ApplicationUserId" />
+        <p class="user-title">@Model.AuthorName</p>
+        <h4>
+            @Model.Content
+        </h4>
     </div>
 </div>
+<hr />
