@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201609091303506_AddImage.Designer.cs">
       <DependentUpon>201609091303506_AddImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609191332116_AddTag.cs" />
+    <Compile Include="Migrations\201609191332116_AddTag.Designer.cs">
+      <DependentUpon>201609191332116_AddTag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609091303506_AddImage.resx">
       <DependentUpon>201609091303506_AddImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609191332116_AddTag.resx">
+      <DependentUpon>201609191332116_AddTag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,8 @@
 
         public virtual IDbSet<Tweet> Tweets { get; set; }
 
+        public virtual IDbSet<Tag> Tags { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
