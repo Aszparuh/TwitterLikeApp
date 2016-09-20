@@ -1,0 +1,14 @@
+﻿@using Twitter.Web.ViewModels.Tweet
+@model CreateTweetViewModel
+
+<div class="container">
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+        @using (@Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.EditorFor(x => x.Content)
+        }
+    </div>
+</div>
+</div>
