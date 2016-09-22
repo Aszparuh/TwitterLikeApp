@@ -27,6 +27,6 @@
 
         void Save();
 
-        void Any(Expression<Func<T, bool>> expression);
+        bool Any(Expression<Func<T, bool>> expression);
     }
 }

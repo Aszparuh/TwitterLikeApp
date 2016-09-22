@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity;
     using System.Linq;
-
+    using System.Linq.Expressions;
     using Models;
 
     public class DbRepository<T, TKey> : IDbRepository<T, TKey>
@@ -60,6 +60,11 @@
         public void Save()
         {
             this.Context.SaveChanges();
+        }
+
+        public bool Any(Expression<Func<T, bool>> expression)
+        {
+            return this.DbSet.Any(expression);
         }
     }
 }

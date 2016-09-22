@@ -61,9 +61,9 @@
             this.Context.SaveChanges();
         }
 
-        public void Any(Expression<Func<T, bool>> expression)
+        public bool Any(Expression<Func<T, bool>> expression)
         {
-            this.DbSet.Any(expression);
+            return this.DbSet.Any(expression);
         }
     }
 }
