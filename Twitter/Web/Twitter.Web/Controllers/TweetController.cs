@@ -8,6 +8,10 @@
         // GET: Tweet
         public ActionResult Create(CreateTweetViewModel model)
         {
+            if (this.ModelState.IsValid)
+            {
+            }
+
             return View();
         }
     }
