@@ -1,6 +1,8 @@
 ﻿namespace Twitter.Data.Common
 {
+    using System;
     using System.Linq;
+    using System.Linq.Expressions;
     using Models;
 
     public interface IDbRepository<T> : IDbRepository<T, int>
@@ -24,5 +26,7 @@
         void HardDelete(T entity);
 
         void Save();
+
+        void Any(Expression<Func<T, bool>> expression);
     }
 }

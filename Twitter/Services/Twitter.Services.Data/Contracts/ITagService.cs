@@ -5,5 +5,7 @@
     public interface ITagService
     {
         IQueryable GetAll();
+
+        bool Exist(string name);
     }
 }

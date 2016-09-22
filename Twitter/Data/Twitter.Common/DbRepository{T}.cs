@@ -3,6 +3,7 @@
     using System;
     using System.Data.Entity;
     using System.Linq;
+    using System.Linq.Expressions;
     using Twitter.Data.Common.Models;
 
     public class DbRepository<T> : IDbRepository<T>
@@ -58,6 +59,11 @@
         public void Save()
         {
             this.Context.SaveChanges();
+        }
+
+        public void Any(Expression<Func<T, bool>> expression)
+        {
+            this.DbSet.Any(expression);
         }
     }
 }
