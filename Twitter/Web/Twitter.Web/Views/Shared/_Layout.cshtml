@@ -38,18 +38,12 @@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryval-unobtrusive")
+    @Scripts.Render("~/bundles/jquery-unobtrusive")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/nprogress")
     @RenderSection("scripts", required: false)
-    <script>
-        //$(document).on('click', '.ajax-action', function (e) {
-        //    NProgress.start();
-        //});
-        //$(document).on('change', '.ajax-container', function () {
-        //    NProgress.end();
-        //    alert();
-        //})
-    </script>
 </body>
 </html>
