@@ -7,10 +7,12 @@
     public class TweetController : Controller
     {
         private readonly ITagExtractionService tagExtractor;
+        private readonly ITagExtractionService tags;
 
-        public TweetController(ITagExtractionService tagExtractor)
+        public TweetController(ITagExtractionService tagExtractor, ITagExtractionService tags)
         {
             this.tagExtractor = tagExtractor;
+            this.tags = tags;
         }
 
         // GET: Tweet
@@ -21,7 +23,10 @@
                 var tags = this.tagExtractor.ExtractTags(model.Content);
                 if (tags.Count > 0)
                 {
+                    foreach (var tag in tags)
+                    {
 
+                    }
                 }
             }
 

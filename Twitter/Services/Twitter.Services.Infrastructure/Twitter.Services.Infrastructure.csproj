@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IInitialAvatarService.cs" />
+    <Compile Include="Contracts\ITagExtractionService.cs" />
     <Compile Include="DefaultAvatarService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TagsExtractionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -53,6 +55,12 @@
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Twitter.Data.Models\Twitter.Data.Models.csproj">
+      <Project>{E8CD3D5F-4DF5-4466-8BC0-C325D6E09614}</Project>
+      <Name>Twitter.Data.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

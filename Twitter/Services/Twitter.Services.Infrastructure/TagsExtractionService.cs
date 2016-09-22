@@ -16,7 +16,7 @@
             {
                 foreach (Match match in Regex.Matches(tweetText, HashTagPattern))
                 {
-                    tags.Add(new Tag { Name = match.Value.ToString() });
+                    tags.Add(new Tag { Name = match.Value.ToString().ToLower() });
                 }
             }
 
