@@ -20,7 +20,11 @@
 
         public ActionResult Index()
         {
-            var homePageTweets = this.tweets.GetAllNew().To<TweetViewModel>().ToList();
+            var homePageTweets = this.tweets.GetAllNew()
+                .OrderByDescending(x => x.CreatedOn)
+                .To<TweetViewModel>()
+                .ToList();
+
             return this.View(homePageTweets);
         }
 

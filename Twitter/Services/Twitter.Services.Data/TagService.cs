@@ -14,14 +14,9 @@
             this.tags = tags;
         }
 
-        public IQueryable GetAll()
+        public IQueryable<Tag> GetAll()
         {
             return this.tags.All();
-        }
-
-        public bool Exist(string name)
-        {
-            return this.tags.Any(x => x.Name == name);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace Twitter.Services.Data
 {
+    using System;
     using System.Linq;
     using Contracts;
     using Twitter.Data.Common;
@@ -14,10 +15,15 @@
             this.tweets = tweets;
         }
 
-        public IQueryable GetAllNew()
+        public IQueryable<Tweet> GetAllNew()
         {
             var newestTweets = this.tweets.All().OrderBy(t => t.CreatedOn);
             return newestTweets;
+        }
+
+        void ITweetService.Add(Tweet tweet)
+        {
+            this.tweets.Add(tweet);
         }
     }
 }

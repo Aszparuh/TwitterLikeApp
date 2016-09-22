@@ -26,7 +26,5 @@
         void HardDelete(T entity);
 
         void Save();
-
-        bool Any(Expression<Func<T, bool>> expression);
     }
 }

@@ -1,9 +1,12 @@
 ﻿namespace Twitter.Services.Data.Contracts
 {
     using System.Linq;
+    using Twitter.Data.Models;
 
     public interface ITweetService
     {
-        IQueryable GetAllNew();
+        IQueryable<Tweet> GetAllNew();
+
+        void Add(Tweet tweet);
     }
 }
