@@ -12,7 +12,7 @@
             {
             }
 
-            return View();
+            return this.View("_CreateTweetPartial", model);
         }
     }
 }

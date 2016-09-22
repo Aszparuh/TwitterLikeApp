@@ -4,8 +4,8 @@
 
     public class CreateTweetViewModel
     {
-        [Required]
-        [MaxLength(300)]
+        [Required(ErrorMessage = "Your Tweet is empty")]
+        [MaxLength(300, ErrorMessage = "The tweet can't be longer than 300 symbols")]
         public string Content { get; set; }
 
         public string ApplicationUserId { get; set; }
