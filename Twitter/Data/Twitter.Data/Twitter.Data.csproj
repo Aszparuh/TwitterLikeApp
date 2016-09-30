@@ -77,6 +77,10 @@
     <Compile Include="Migrations\201609191332116_AddTag.Designer.cs">
       <DependentUpon>201609191332116_AddTag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609301309148_AddDisplayContentTweet.cs" />
+    <Compile Include="Migrations\201609301309148_AddDisplayContentTweet.Designer.cs">
+      <DependentUpon>201609301309148_AddDisplayContentTweet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -106,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609191332116_AddTag.resx">
       <DependentUpon>201609191332116_AddTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609301309148_AddDisplayContentTweet.resx">
+      <DependentUpon>201609301309148_AddDisplayContentTweet.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

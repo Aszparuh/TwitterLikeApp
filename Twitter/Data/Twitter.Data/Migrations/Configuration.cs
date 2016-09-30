@@ -71,9 +71,9 @@
 
                 var tweets = new Tweet[]
                 {
-                    new Tweet { Content = "Initial Tweet by Admin " + DateTime.Now.ToString() },
-                    new Tweet { Content = "Second Tweet" },
-                    new Tweet { Content = "Third Tweet" }
+                    new Tweet { OriginalContent = "Initial Tweet by Admin " + DateTime.Now.ToString() },
+                    new Tweet { OriginalContent = "Second Tweet" },
+                    new Tweet { OriginalContent = "Third Tweet" }
                 };
 
                 foreach (var tweet in tweets)

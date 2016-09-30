@@ -37,7 +37,7 @@
         {
             var tweetToSave = this.Mapper.Map<Tweet>(model);
             tweetToSave.ApplicationUserId = this.User.Identity.GetUserId();
-            var tags = this.tagExtractor.ExtractTags(tweetToSave.Content);
+            var tags = this.tagExtractor.ExtractTags(tweetToSave.OriginalContent);
             if (tags.Count > 0)
             {
                 foreach (var tag in tags)

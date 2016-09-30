@@ -15,7 +15,10 @@
 
         [Required]
         [MaxLength(300)]
-        public string Content { get; set; }
+        public string OriginalContent { get; set; }
+
+        [MaxLength(1000)]
+        public string DisplayContent { get; set; }
 
         public string ApplicationUserId { get; set; }
 
