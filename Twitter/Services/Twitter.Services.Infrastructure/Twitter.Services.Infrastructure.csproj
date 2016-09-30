@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Contracts\IInitialAvatarService.cs" />
     <Compile Include="Contracts\ITagExtractionService.cs" />
+    <Compile Include="Contracts\ITagReplaceService.cs" />
     <Compile Include="DefaultAvatarService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TagsExtractionService.cs" />

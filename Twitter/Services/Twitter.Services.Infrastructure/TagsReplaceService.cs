@@ -1,8 +1,9 @@
 ﻿namespace Twitter.Services.Infrastructure
 {
     using System.Text.RegularExpressions;
+    using Contracts;
 
-    public class TagsReplaceService
+    public class TagsReplaceService : ITagReplaceService
     {
         public string ReplaceHashtagsWithLinks(string originalContent)
         {
@@ -10,8 +11,9 @@
                 originalContent,
                 "(#)((?:[A-Za-z0-9-_]*))",
                 c => string.Format(
-                    "<a href=\"/Tag/Index/%23{0}> </a>",
-                c.Value.TrimStart(new char[] { '#' })));
+                    "<a href=\"/Tag/Index/%23{0}\">{1}</a>",
+                c.Value.TrimStart(new char[] { '#' }),
+                c.Value));
         }
     }
 }

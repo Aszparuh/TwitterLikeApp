@@ -10,6 +10,8 @@
         [MaxLength(300, ErrorMessage = "The tweet can't be longer than 300 symbols")]
         public string OriginalContent { get; set; }
 
+        public string DisplayContent { get; set; }
+
         public string ApplicationUserId { get; set; }
     }
 }

@@ -21,7 +21,7 @@
             var tag = this.tags
                 .GetAll()
                 .Include(t => t.Tweets)
-                .FirstOrDefault(t => t.Name == id);
+                .FirstOrDefault(t => t.Name == id.ToLower());
 
             if (tag == null)
             {

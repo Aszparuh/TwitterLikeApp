@@ -13,12 +13,18 @@
         private readonly ITagExtractionService tagExtractor;
         private readonly ITagService tags;
         private readonly ITweetService tweets;
+        private readonly ITagReplaceService tagRepalceService;
 
-        public TweetController(ITagExtractionService tagExtractor, ITagService tags, ITweetService tweets)
+        public TweetController(
+            ITagExtractionService tagExtractor,
+            ITagService tags,
+            ITweetService tweets,
+            ITagReplaceService tagRepalceService)
         {
             this.tagExtractor = tagExtractor;
             this.tags = tags;
             this.tweets = tweets;
+            this.tagRepalceService = tagRepalceService;
         }
 
         // GET: Tweet
@@ -53,6 +59,9 @@
                     }
                 }
             }
+
+            var displayContent = this.tagRepalceService.ReplaceHashtagsWithLinks(tweetToSave.OriginalContent);
+            tweetToSave.DisplayContent = displayContent;
 
             this.tweets.Add(tweetToSave);
         }
