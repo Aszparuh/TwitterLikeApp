@@ -7,7 +7,7 @@
 
     public class TweetViewModel : IMapFrom<Tweet>, IHaveCustomMappings
     {
-        public string Content { get; set; }
+        public string OriginalContent { get; set; }
 
         public string ApplicationUserId { get; set; }
 

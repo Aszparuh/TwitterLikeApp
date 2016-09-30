@@ -14,8 +14,8 @@
                         <img class="form-avatar" src="~/Avatar?id=@User.Identity.GetUserId()" />
                     </div>
                     <div class="col-sm-10">
-                        @Html.TextAreaFor(model => model.Content, new { @class = "form-control", placeholder = "What's happening?" })
-                        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                        @Html.TextAreaFor(model => model.OriginalContent, new { @class = "form-control", placeholder = "What's happening?" })
+                        @Html.ValidationMessageFor(model => model.OriginalContent, "", new { @class = "text-danger" })
                     </div>
                     
                 </div>
