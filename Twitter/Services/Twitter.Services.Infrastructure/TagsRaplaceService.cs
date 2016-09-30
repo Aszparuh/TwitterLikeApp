@@ -2,7 +2,7 @@
 {
     using System.Text.RegularExpressions;
 
-    public class TagsRaplaceService
+    public class TagsReplaceService
     {
         public string ReplaceHashtagsWithLinks(string originalContent)
         {
